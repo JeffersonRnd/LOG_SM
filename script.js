@@ -65,7 +65,7 @@ document.getElementById('submitLogin').addEventListener('click', (e) => {
         const redirectTimeout = 2000;
         if (clientButton.classList.contains('active')) {
             setTimeout(() => {
-                window.location.href = "https://jeffersonrnd.github.io/Proyect-IHC-part2/";
+                window.location.href = "https://jeffersonrnd.github.io/CUSTOMER_SM/";
             }, redirectTimeout);
         } else if (adminButton.classList.contains('active')) {
             setTimeout(() => {
