@@ -69,7 +69,7 @@ document.getElementById('submitLogin').addEventListener('click', (e) => {
             }, redirectTimeout);
         } else if (adminButton.classList.contains('active')) {
             setTimeout(() => {
-                window.location.href = "https://jeffersonrnd.github.io/Proyect-IHC-part3/";
+                window.location.href = "https://jeffersonrnd.github.io/Administrator-Employee_SM/";
             }, redirectTimeout);
         }
     }
