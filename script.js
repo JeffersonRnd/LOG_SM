@@ -12,20 +12,19 @@ const welcomeScreen = document.getElementById('welcomeScreen');
 const dniLabel = document.getElementById('dniLabel'); 
 const rucLabel = document.getElementById('rucLabel'); 
 
-// Welcome screen timeout
+// Bienvenida
 setTimeout(() => {
     welcomeScreen.classList.add('hidden');
     selectRole.classList.remove('hidden');
 }, 3000);
 
-// Existing user link handler
 existingUserLink.addEventListener('click', (e) => {
     e.preventDefault();
     nextButton.classList.add('hidden');
     createAccount.classList.remove('hidden');
 });
 
-// Form validation and next button handler
+// para la validación
 nextButton.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -33,12 +32,12 @@ nextButton.addEventListener("click", (e) => {
         nextButton.classList.add("hidden");
         createAccount.classList.remove("hidden");
     } else {
-        // Using Bootstrap's toast for notifications would be better
+        // Uso de Bootstrap's para notificaciones
         alert("Por favor, complete todos los campos requeridos.");
     }
 });
 
-// Login submission handler
+// Login 
 document.getElementById('submitLogin').addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -61,7 +60,7 @@ document.getElementById('submitLogin').addEventListener('click', (e) => {
         console.log(userData);
         alert('Datos registrados correctamente');
 
-        // Redirect based on role
+        // de acuerdo al rol su pagina principal
         const redirectTimeout = 2000;
         if (clientButton.classList.contains('active')) {
             setTimeout(() => {
@@ -75,7 +74,7 @@ document.getElementById('submitLogin').addEventListener('click', (e) => {
     }
 });
 
-// Role selection handlers
+// seleccion de rol
 clientButton.addEventListener('click', () => {
     selectRole.classList.add('hidden');
     loginForm.classList.remove('hidden');
