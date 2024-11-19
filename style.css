@@ -106,7 +106,7 @@ form .title {
 .link:hover {
     color: #0d6efd;
 }
-
+/*responsive*/
 @media (max-width: 576px) {
     .welcome-title {
         font-size: 1.5rem;
