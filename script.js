@@ -12,7 +12,7 @@ const welcomeScreen = document.getElementById('welcomeScreen');
 const dniLabel = document.getElementById('dniLabel'); 
 const rucLabel = document.getElementById('rucLabel'); 
 
-// Bienvenida
+// bienvenida
 setTimeout(() => {
     welcomeScreen.classList.add('hidden');
     selectRole.classList.remove('hidden');
@@ -24,7 +24,7 @@ existingUserLink.addEventListener('click', (e) => {
     createAccount.classList.remove('hidden');
 });
 
-// para la validación
+// Para la validacion
 nextButton.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -32,12 +32,11 @@ nextButton.addEventListener("click", (e) => {
         nextButton.classList.add("hidden");
         createAccount.classList.remove("hidden");
     } else {
-        // Uso de Bootstrap's para notificaciones
         alert("Por favor, complete todos los campos requeridos.");
     }
 });
 
-// Login 
+// Login submission handler
 document.getElementById('submitLogin').addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -57,45 +56,28 @@ document.getElementById('submitLogin').addEventListener('click', (e) => {
             password: password.value.trim()
         };
 
-        // Guardar los datos en localStorage
+        // Almacenar datos en LocalStorage
         localStorage.setItem('userData', JSON.stringify(userData));
 
-        // Mostrar los datos en la consola
-        console.log('Datos registrados y almacenados en localStorage:', userData);
-
-        // Mostrar el mensaje de éxito
+        console.log(userData);
         alert('Datos registrados correctamente');
 
-        // Esperar un poco para que el usuario vea el mensaje y los datos en la consola antes de redirigir
-        const redirectTimeout = 2000; 
-
-        // Redirigir de acuerdo al rol
-        setTimeout(() => {
-            if (clientButton.classList.contains('active')) {
+        // Redirigir según el rol seleccionado
+        const redirectTimeout = 2000;
+        if (clientButton.classList.contains('active')) {
+            setTimeout(() => {
                 window.location.href = "https://jeffersonrnd.github.io/CUSTOMER_SM/";
-            } else if (adminButton.classList.contains('active')) {
+            }, redirectTimeout);
+        } else if (adminButton.classList.contains('active')) {
+            setTimeout(() => {
                 window.location.href = "https://jeffersonrnd.github.io/Administrator-Employee_SM/";
-            }
-        }, redirectTimeout);
-    }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const storedUserData = localStorage.getItem('userData');
-    if (storedUserData) {
-        const userData = JSON.parse(storedUserData);
-
-        // Rellenar campos con los datos guardados
-        firstName.value = userData.firstName;
-        lastName.value = userData.lastName;
-        phone.value = userData.phone;
-        document.getElementById('dni').value = userData.dni;
-        document.getElementById('ruc').value = userData.ruc;
+            }, redirectTimeout);
+        }
     }
 });
 
 
-// seleccion de rol
+// selecion de roles
 clientButton.addEventListener('click', () => {
     selectRole.classList.add('hidden');
     loginForm.classList.remove('hidden');
@@ -113,3 +95,4 @@ adminButton.addEventListener('click', () => {
     adminButton.classList.add('active');
     clientButton.classList.remove('active');
 });
+
