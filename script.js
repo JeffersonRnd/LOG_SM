@@ -66,11 +66,11 @@ document.getElementById('submitLogin').addEventListener('click', (e) => {
         const redirectTimeout = 2000;
         if (clientButton.classList.contains('active')) {
             setTimeout(() => {
-                window.location.href = "https://venerable-sunburst-97e4d3.netlify.app";
+                window.location.href = "https://jeffersonrnd.github.io/CUSTOMER_SM/";
             }, redirectTimeout);
         } else if (adminButton.classList.contains('active')) {
             setTimeout(() => {
-                window.location.href = "https://effervescent-empanada-16c46a.netlify.app";
+                window.location.href = "https://jeffersonrnd.github.io/Administrator-Employee_SM/";
             }, redirectTimeout);
         }
     }
